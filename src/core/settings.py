@@ -40,6 +40,7 @@ class Settings(BaseSettings):
     base_dir: Path = BASE_DIR
 
     source_list_filename: str = "list.txt"
+    ignore: list[str] = [".gitkeep"]
 
     ffmpeg: Path = BASE_DIR.parent / "ffmpeg" / "bin" / "ffmpeg.exe"
 

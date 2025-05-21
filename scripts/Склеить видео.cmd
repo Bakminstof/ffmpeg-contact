@@ -59,7 +59,7 @@ IF NOT EXIST "%RESULT_DIR%" (
     @MKDIR "%RESULT_DIR%"
 )
 
-@FOR /F "USEBACKQ" %%D IN (`@DIR /B "%SOURCE_DIR%"`) DO (
+@FOR /F "USEBACKQ" %%D IN (`@DIR /B "%SOURCE_DIR%" ^| @FINDSTR /V ".gitkeep"`) DO (
     @CALL :print %SF_CAYN% "Обработка - %RESET%%NF_CAYN%%%D%RESET%" Print_border
 
     @MKDIR "%RESULT_DIR%\%%D"

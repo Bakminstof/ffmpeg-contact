@@ -124,7 +124,18 @@ def make_source_list_file(
     return source_list_file_path
 
 
-def get_source_files(source: Path, target_suffix: str) -> list[Path]:
+def get_source_files(
+    source: Path,
+    target_suffix: str,
+    ignore: list[str] = settings.ignore,
+) -> list[Path]:
+    if source.name in ignore:
+        return []
+
+    if not source.is_dir():
+        logger.warning("%s is not a directory", source)
+        return []
+
     data = []
 
     for item in source.iterdir():
@@ -172,5 +183,9 @@ def start(
     result_filename: str | None = None,
 ) -> None:
     source_files = get_source_files(source, target_suffix)
+
+    if not source_files:
+        return
+
     source_list_file = make_source_list_file(source, source_files)
     contact_files(source, source_list_file, target_suffix, destination, result_filename)

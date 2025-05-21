@@ -14,6 +14,8 @@ __pycache__/
 # Local
 poetry.lock
 
+logs/
+
 scripts/source
 !scripts/source/.gitkeep
 scripts/result
