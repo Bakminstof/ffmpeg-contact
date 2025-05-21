@@ -1,0 +1,28 @@
+default_stages: [ pre-commit, pre-push ]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^venv/
+      - id: end-of-file-fixer
+        exclude: ^venv/
+      - id: check-yaml
+        exclude: ^venv/
+      - id: check-added-large-files
+        exclude: ^venv/
+
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+        exclude: ^venv/
+        args: [ "-l", "100" ]
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        exclude: ^venv/
+        args: [ "--profile", "black" ]

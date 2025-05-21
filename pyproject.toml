@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ffmpeg-contact"
+version = "0.1.0"
+description = ""
+authors = ["Andrey Abramov"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.11.4"
+pydantic-settings = "^2.9.1"
+colorama = "^0.4.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
