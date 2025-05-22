@@ -43,7 +43,7 @@
 ::==============================================================================================================
 @PUSHD "%CURRENT_DIR%"
 
-@SET "PYTHON=%CURRENT_DIR%..\venv\ffmpeg-contact-xFq6df2--py3.12\Scripts\python.exe"
+@SET "PYTHON=%CURRENT_DIR%..\venv\WPy64-312100\python\python.exe"
 @SET "APP_ENTRYPOINT=%CURRENT_DIR%..\src\main.py"
 
 @SET "SOURCE_DIR=%CURRENT_DIR%source"
