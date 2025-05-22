@@ -43,14 +43,15 @@
 ::==============================================================================================================
 @PUSHD "%CURRENT_DIR%"
 
-@SET "PYTHON=%CURRENT_DIR%..\venv\WPy64-312100\python\python.exe"
-@SET "APP_ENTRYPOINT=%CURRENT_DIR%..\src\main.py"
+@SET "PYTHON=%CURRENT_DIR%..\venv\python-3.12.10-embed-amd64\python.exe"
+@SET "APP_ENTRYPOINT=main.py"
 
 @SET "SOURCE_DIR=%CURRENT_DIR%source"
 @SET "RESULT_DIR=%CURRENT_DIR%result"
 
 @SET "TARGET_EXTENSION=3gp"
 
+@PUSHD "%CURRENT_DIR%..\src\"
 
 IF NOT EXIST "%SOURCE_DIR%" (
     @MKDIR "%SOURCE_DIR%"
@@ -71,6 +72,7 @@ IF NOT EXIST "%RESULT_DIR%" (
 
 @CALL :print %NF_BLACK%%NB_CAYN% " FINISH "
 
+@POPD
 @POPD
 
 @PAUSE > nul

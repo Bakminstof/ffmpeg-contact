@@ -1,3 +1,9 @@
+from os import getcwd
+from sys import path
+
+if getcwd() not in path:
+    path.append(getcwd())
+
 from core.utils import get_args, start, startup
 
 
